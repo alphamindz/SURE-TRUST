@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Entry Form</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .small-note {
+      font-size:0.68rem;
+      opacity:0.7;
+      margin-left:6px;
+      text-transform:none;
+      letter-spacing:0;
+    }
+    /* moved inline styles to CSS to satisfy linter */
+    .span-2 { grid-column: span 2; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="form-header">
+
+    <div class="logo-circle" aria-hidden="true">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4C20 4 10 10 10 20C10 30 20 36 20 36C20 36 30 30 30 20C30 10 20 4 20 4Z"
+              fill="rgba(13,27,62,0.6)" stroke="#0d1b3e" stroke-width="1.5"/>
+        <path d="M14 18h12M14 22h12M20 14v16"
+              stroke="#0d1b3e" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="20" cy="9" r="2.5" fill="#0d1b3e"/>
+      </svg>
+    </div>
+
+    <div class="header-text">
+      <h1>ACADEMY ENTRY FORM</h1>
+      <h2>Application for Admission</h2>
+      <p>Please fill in the form in BLOCK LETTERS and submit all required documents.</p>
+    </div>
+
+    <div class="photo-box" role="img" aria-label="Paste passport size photograph here">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="12" cy="10" r="3"/>
+        <path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      </svg>
+      Paste<br>Passport Size<br>Photograph<br>Here
+    </div>
+
+  </header>
+  <div class="gold-rule" aria-hidden="true"></div>
+
+  <!-- ===== FORM ===== -->
+  <main class="form-body">
+  <form novalidate>
+
+    <!-- Section 1: Class Applied For -->
+    <section class="section" aria-labelledby="sec1-title">
+      <div class="section-title" id="sec1-title">
+        <span class="num" aria-hidden="true">1</span> Class Applied For
+      </div>
+
+      <div class="row cols-3">
+        <div class="field">
+          <label for="academicYear">Academic Year</label>
+          <input id="academicYear" name="academicYear" type="text"
+                 placeholder="e.g. 2025–2026" title="Academic Year">
+        </div>
+        <div class="field">
+          <label for="classApplying">Class Applying For</label>
+          <input id="classApplying" name="classApplying" type="text"
+                 placeholder="e.g. Grade IX" title="Class Applying For">
+        </div>
+        <div class="field">
+          <label for="admissionDate">Date of Admission Required</label>
+          <input id="admissionDate" name="admissionDate" type="text"
+                 placeholder="DD / MM / YYYY" title="Date of Admission Required">
+        </div>
+      </div>
+
+      <div class="row cols-1">
+        <div class="field">
+          <label for="gradeStream">Grade / Stream (if applicable)</label>
+          <input id="gradeStream" name="gradeStream" type="text"
+                 placeholder="e.g. Science / Commerce / Arts" title="Grade or Stream">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Student Information -->
+    <section class="section" aria-labelledby="sec2-title">
+      <div class="section-title" id="sec2-title">
+        <span class="num" aria-hidden="true">2</span> Student Information
+      </div>
+
+      <div class="row cols-1">
+        <div class="field">
+          <label for="fullName">Full Name (as per Birth Certificate)</label>
+          <input id="fullName" name="fullName" type="text"
+                 placeholder="Enter full name" title="Full Name as per Birth Certificate">
+        </div>
+      </div>
+
+      <div class="row cols-2">
+        <div class="field">
+          <label for="dob">Date of Birth</label>
+          <input id="dob" name="dob" type="text"
+                 placeholder="DD / MM / YYYY" title="Date of Birth (DD/MM/YYYY)">
+        </div>
+        <fieldset class="field gender-fieldset">
+          <legend>Gender</legend>
+          <div class="gender-group">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="row cols-3">
+        <div class="field">
+          <label for="nationality">Nationality</label>
+          <input id="nationality" name="nationality" type="text"
+                 placeholder="e.g. Indian" title="Nationality">
+        </div>
+        <div class="field">
+          <label for="religion">Religion</label>
+          <input id="religion" name="religion" type="text"
+                 placeholder="e.g. Hinduism" title="Religion">
+        </div>
+        <div class="field">
+          <label for="motherTongue">Mother Tongue</label>
+          <input id="motherTongue" name="motherTongue" type="text"
+                 placeholder="e.g. Hindi" title="Mother Tongue">
+        </div>
+      </div>
+
+      <div class="row cols-2">
+        <div class="field">
+          <label for="aadhaar">Aadhaar Number / ID (if any)</label>
+          <input id="aadhaar" name="aadhaar" type="text"
+                 placeholder="XXXX XXXX XXXX" title="Aadhaar Number or ID">
+        </div>
+        <div class="field">
+          <label for="bloodGroup">Blood Group</label>
+          <select id="bloodGroup" name="bloodGroup" title="Blood Group">
+            <option value="">Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A−</option>
+            <option value="B+">B+</option>
+            <option value="B-">B−</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB−</option>
+            <option value="O+">O+</option>
+            <option value="O-">O−</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row cols-3">
+        <div class="field">
+          <label for="placeOfBirth">Place of Birth</label>
+          <input id="placeOfBirth" name="placeOfBirth" type="text"
+                 placeholder="City / Town" title="Place of Birth">
+        </div>
+        <div class="field">
+          <label for="birthState">State</label>
+          <input id="birthState" name="birthState" type="text"
+                 placeholder="State" title="State of Birth">
+        </div>
+        <div class="field">
+          <label for="birthCountry">Country</label>
+          <input id="birthCountry" name="birthCountry" type="text"
+                 placeholder="Country" title="Country of Birth">
+        </div>
+      </div>
+
+      <div class="row cols-1">
+        <div class="field">
+          <label for="address">Student's Residential Address</label>
+          <textarea id="address" name="address" rows="2"
+                    placeholder="House No., Street, Area, Landmark..."
+                    title="Student Residential Address"></textarea>
+        </div>
+      </div>
+
+      <div class="row cols-3">
+        <div class="field">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text"
+                 placeholder="City" title="City">
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <input id="state" name="state" type="text"
+                 placeholder="State" title="State">
+        </div>
+        <div class="field">
+          <label for="pinCode">PIN Code</label>
+          <input id="pinCode" name="pinCode" type="text"
+                 placeholder="6-digit PIN" title="PIN Code" maxlength="6">
+        </div>
+      </div>
+
+      <div class="row cols-2">
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel"
+                 placeholder="+91 XXXXX XXXXX" title="Phone Number">
+        </div>
+        <div class="field">
+          <label for="email">Email (if any)</label>
+          <input id="email" name="email" type="email"
+                 placeholder="student@email.com" title="Email Address">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Parent / Guardian Information -->
+    <section class="section" aria-labelledby="sec3-title">
+      <div class="section-title" id="sec3-title">
+        <span class="num" aria-hidden="true">3</span> Parent / Guardian Information
+      </div>
+
+      <div class="parent-grid">
+
+        <!-- Father -->
+        <div class="parent-col">
+          <div class="parent-header" id="father-heading">Father / Guardian</div>
+          <div class="parent-fields" role="group" aria-labelledby="father-heading">
+            <div class="field">
+              <label for="fatherName">Full Name</label>
+              <input id="fatherName" name="fatherName" type="text"
+                     placeholder="Father's full name" title="Father Full Name">
+            </div>
+            <div class="field">
+              <label for="fatherQual">Qualification</label>
+              <input id="fatherQual" name="fatherQual" type="text"
+                     placeholder="e.g. B.Tech" title="Father Qualification">
+            </div>
+            <div class="field">
+              <label for="fatherOcc">Occupation</label>
+              <input id="fatherOcc" name="fatherOcc" type="text"
+                     placeholder="e.g. Engineer" title="Father Occupation">
+            </div>
+            <div class="field">
+              <label for="fatherOrg">Organization / Company</label>
+              <input id="fatherOrg" name="fatherOrg" type="text"
+                     placeholder="Company name" title="Father Organization or Company">
+            </div>
+            <div class="field">
+              <label for="fatherPhone">Phone Number</label>
+              <input id="fatherPhone" name="fatherPhone" type="tel"
+                     placeholder="+91 XXXXX XXXXX" title="Father Phone Number">
+            </div>
+            <div class="field">
+              <label for="fatherEmail">Email (if any)</label>
+              <input id="fatherEmail" name="fatherEmail" type="email"
+                     placeholder="father@email.com" title="Father Email">
+            </div>
+            <div class="field">
+              <label for="annualIncome">Annual Income (Approx.) ₹</label>
+              <input id="annualIncome" name="annualIncome" type="text"
+                     placeholder="e.g. 5,00,000" title="Annual Income Approximately in Rupees">
+            </div>
+          </div>
+        </div>
+
+        <!-- Mother -->
+        <div class="parent-col">
+          <div class="parent-header" id="mother-heading">Mother / Guardian</div>
+          <div class="parent-fields" role="group" aria-labelledby="mother-heading">
+            <div class="field">
+              <label for="motherName">Full Name</label>
+              <input id="motherName" name="motherName" type="text"
+                     placeholder="Mother's full name" title="Mother Full Name">
+            </div>
+            <div class="field">
+              <label for="motherQual">Qualification</label>
+              <input id="motherQual" name="motherQual" type="text"
+                     placeholder="e.g. M.A." title="Mother Qualification">
+            </div>
+            <div class="field">
+              <label for="motherOcc">Occupation</label>
+              <input id="motherOcc" name="motherOcc" type="text"
+                     placeholder="e.g. Teacher" title="Mother Occupation">
+            </div>
+            <div class="field">
+              <label for="motherOrg">Organization / Company</label>
+              <input id="motherOrg" name="motherOrg" type="text"
+                     placeholder="Company name" title="Mother Organization or Company">
+            </div>
+            <div class="field">
+              <label for="motherPhone">Phone Number</label>
+              <input id="motherPhone" name="motherPhone" type="tel"
+                     placeholder="+91 XXXXX XXXXX" title="Mother Phone Number">
+            </div>
+            <div class="field">
+              <label for="motherEmail">Email (if any)</label>
+              <input id="motherEmail" name="motherEmail" type="email"
+                     placeholder="mother@email.com" title="Mother Email">
+            </div>
+            <div class="field">
+              <label for="guardianSignature">Parent / Guardian Signature</label>
+              <input id="guardianSignature" name="guardianSignature" type="text"
+                     placeholder="Signature" title="Parent or Guardian Signature">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Previous School Details -->
+    <section class="section" aria-labelledby="sec4-title">
+      <div class="section-title" id="sec4-title">
+        <span class="num" aria-hidden="true">4</span> Previous School Details
+      </div>
+
+      <div class="row cols-2">
+        <div class="field">
+          <label for="prevSchool">Previous School Name</label>
+          <input id="prevSchool" name="prevSchool" type="text"
+                 placeholder="School name" title="Previous School Name">
+        </div>
+        <div class="field">
+          <label for="board">Board</label>
+          <input id="board" name="board" type="text"
+                 placeholder="e.g. CBSE / ICSE / State" title="Board">
+        </div>
+      </div>
+
+      <div class="row cols-2">
+        <div class="field">
+          <label for="lastClass">Last Class Studied</label>
+          <input id="lastClass" name="lastClass" type="text"
+                 placeholder="e.g. Class VIII" title="Last Class Studied">
+        </div>
+        <div class="field">
+          <label for="prevAcademicYear">Academic Year</label>
+          <input id="prevAcademicYear" name="prevAcademicYear" type="text"
+                 placeholder="e.g. 2024–2025" title="Academic Year">
+        </div>
+      </div>
+
+      <div class="row cols-3">
+        <div class="field">
+          <label for="prevCity">City</label>
+          <input id="prevCity" name="prevCity" type="text"
+                 placeholder="City" title="Previous School City">
+        </div>
+        <div class="field">
+          <label for="prevState">State</label>
+          <input id="prevState" name="prevState" type="text"
+                 placeholder="State" title="Previous School State">
+        </div>
+        <div class="field">
+          <label for="prevCountry">Country</label>
+          <input id="prevCountry" name="prevCountry" type="text"
+                 placeholder="Country" title="Previous School Country">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Additional Information -->
+    <section class="section" aria-labelledby="sec5-title">
+      <div class="section-title" id="sec5-title">
+        <span class="num" aria-hidden="true">5</span> Additional Information
+      </div>
+
+      <div class="yn-row">
+        <span class="yn-label" id="medical-label">
+          Does the student have any medical condition / allergy?
+        </span>
+        <div class="yn-options" role="radiogroup" aria-labelledby="medical-label">
+          <label><input type="radio" name="medical" value="yes"> Yes</label>
+          <label><input type="radio" name="medical" value="no"> No</label>
+        </div>
+        <div class="specify-field">
+          <label for="medicalSpecify" class="sr-only">If Yes, specify medical condition</label>
+          <input id="medicalSpecify" name="medicalSpecify" type="text"
+                 placeholder="If Yes, please specify" title="Specify medical condition or allergy">
+        </div>
+      </div>
+
+      <div class="yn-row">
+        <span class="yn-label" id="disciplinary-label">
+          Has the student been involved in any disciplinary action?
+        </span>
+        <div class="yn-options" role="radiogroup" aria-labelledby="disciplinary-label">
+          <label><input type="radio" name="disciplinary" value="yes"> Yes</label>
+          <label><input type="radio" name="disciplinary" value="no"> No</label>
+        </div>
+        <div class="specify-field">
+          <label for="disciplinarySpecify" class="sr-only">If Yes, specify disciplinary action</label>
+          <input id="disciplinarySpecify" name="disciplinarySpecify" type="text"
+                 placeholder="If Yes, please specify" title="Specify disciplinary action">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="hobbies">Hobbies / Interests</label>
+        <input id="hobbies" name="hobbies" type="text"
+               placeholder="e.g. Reading, Football, Music..." title="Hobbies and Interests">
+      </div>
+    </section>
+
+    <!-- Section 6: Documents Checklist -->
+    <section class="section" aria-labelledby="sec6-title">
+      <div class="section-title" id="sec6-title">
+        <span class="num" aria-hidden="true">6</span> Documents Checklist
+        <span class="small-note">(Please tick)</span>
+      </div>
+
+      <div class="checklist-grid" role="group" aria-labelledby="sec6-title">
+        <label class="check-item">
+          <input type="checkbox" name="doc_birth" value="1"> Birth Certificate
+        </label>
+        <label class="check-item">
+          <input type="checkbox" name="doc_photo" value="1"> Passport Size Photographs
+        </label>
+        <label class="check-item">
+          <input type="checkbox" name="doc_report" value="1"> Previous School Report Card
+        </label>
+        <label class="check-item">
+          <input type="checkbox" name="doc_tc" value="1"> Transfer Certificate
+        </label>
+        <label class="check-item">
+          <input type="checkbox" name="doc_address" value="1"> Address Proof
+        </label>
+        <label class="check-item">
+          <input type="checkbox" name="doc_id" value="1"> ID Proof (Aadhaar / Passport)
+        </label>
+        <label class="check-item">
+          <input type="checkbox" name="doc_medical" value="1"> Medical Certificate (if applicable)
+        </label>
+        <div class="field span-2">
+          <label for="docOthers">Others (Please specify)</label>
+          <input id="docOthers" name="docOthers" type="text"
+                 placeholder="Any other documents" title="Other documents">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Declaration -->
+    <section class="section" aria-labelledby="sec7-title">
+      <div class="section-title" id="sec7-title">
+        <span class="num" aria-hidden="true">7</span> Declaration
+      </div>
+
+      <div class="declaration-box" role="note">
+        I hereby declare that the information provided above is true and correct to the best of
+        my knowledge and belief. I understand that any false information may lead to cancellation
+        of admission.
+      </div>
+
+      <div class="row cols-2">
+        <div class="field">
+          <label for="declDate">Date</label>
+          <input id="declDate" name="declDate" type="text"
+                 placeholder="DD / MM / YYYY" title="Declaration Date">
+        </div>
+        <div class="field">
+          <label for="parentSignature">Signature of Parent / Guardian</label>
+          <input id="parentSignature" name="parentSignature" type="text"
+                 placeholder="Signature" title="Signature of Parent or Guardian">
+        </div>
+      </div>
+    </section>
+
+  </form>
+  </main>
+
+  <!-- ===== SUBMIT BUTTONS ===== -->
+  <div class="submit-row">
+    <button class="btn btn-secondary" type="button" onclick="window.print()"
+            aria-label="Print this form">
+      🖨 Print Form
+    </button>
+    <button class="btn btn-primary" type="submit" form=""
+            aria-label="Submit application">
+      Submit Application
+    </button>
+  </div>
+
+  <!-- ===== OFFICE USE ONLY ===== -->
+  <section class="office-section" aria-labelledby="office-title">
+    <div class="office-title" id="office-title">For Office Use Only</div>
+
+    <div class="office-grid">
+      <div class="office-field">
+        <label for="appNo">Application No.</label>
+        <input id="appNo" name="appNo" type="text"
+               placeholder="Application number" title="Application Number">
+      </div>
+      <div class="office-field">
+        <label for="dateReceived">Date Received</label>
+        <input id="dateReceived" name="dateReceived" type="text"
+               placeholder="DD / MM / YYYY" title="Date Received">
+      </div>
+      <div class="office-field">
+        <label for="receivedBy">Received By</label>
+        <input id="receivedBy" name="receivedBy" type="text"
+               placeholder="Staff name" title="Received By">
+      </div>
+    </div>
+
+    <div class="office-grid">
+      <div class="office-field">
+        <label class="office-group-label">Documents Verified</label>
+        <div class="office-yn" role="group" aria-label="Documents Verified">
+          <label><input type="checkbox" name="docsVerifiedYes" value="yes"> Yes</label>
+          <label><input type="checkbox" name="docsVerifiedNo" value="no"> No</label>
+        </div>
+      </div>
+      <div class="office-field">
+        <label class="office-group-label">Admission Approved</label>
+        <div class="office-yn" role="group" aria-label="Admission Approved">
+          <label><input type="checkbox" name="admApprovedYes" value="yes"> Yes</label>
+          <label><input type="checkbox" name="admApprovedNo" value="no"> No</label>
+        </div>
+      </div>
+      <div class="office-field">
+        <label for="remarks">Remarks</label>
+        <input id="remarks" name="remarks" type="text"
+               placeholder="Any remarks" title="Remarks">
+      </div>
+    </div>
+
+  </section>
+
+</div><!-- end .page -->
+</body>
+</html>

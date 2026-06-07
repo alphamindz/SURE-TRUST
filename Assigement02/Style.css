@@ -1,0 +1,634 @@
+/* ================================================
+   ACADEMY ENTRY FORM — Stylesheet
+   File: style.css
+   Link in HTML: <link rel="stylesheet" href="style.css">
+   ================================================ */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --navy:       #0d1b3e;
+  --navy-mid:   #1a2e5a;
+  --gold:       #c9a84c;
+  --gold-light: #e8c97a;
+  --cream:      #fafaf7;
+  --white:      #ffffff;
+  --border:     #d0d8e8;
+  --text:       #1a1a2e;
+  --muted:      #5a6580;
+  --input-bg:   #f4f6fc;
+  --section-bg: #0d1b3e;
+  --shadow:     0 2px 16px rgba(13, 27, 62, 0.10);
+}
+
+/* ---------- Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Body ---------- */
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #e8edf5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 16px 48px;
+}
+
+/* ---------- Page Card ---------- */
+.page {
+  width: 100%;
+  max-width: 860px;
+  background: var(--white);
+  box-shadow: 0 8px 48px rgba(13, 27, 62, 0.18);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+.form-header {
+  background: var(--navy);
+  padding: 28px 36px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+}
+
+.logo-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--gold), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(201, 168, 76, 0.4);
+}
+
+.logo-circle svg {
+  width: 38px;
+  height: 38px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.header-text h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gold-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.header-text p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 8px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Photo Box */
+.photo-box {
+  width: 100px;
+  height: 115px;
+  border: 2px dashed var(--gold);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.photo-box svg {
+  opacity: 0.7;
+}
+
+/* Gold Divider */
+.gold-rule {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+
+/* ==============================
+   FORM BODY
+   ============================== */
+.form-body {
+  padding: 0 32px 40px;
+  background: var(--cream);
+}
+
+.section {
+  margin-top: 28px;
+}
+
+/* Section Title Bar */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--section-bg);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+.section-title span.num {
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================
+   GRID LAYOUT ROWS
+   ============================== */
+.row {
+  display: grid;
+  gap: 14px 20px;
+  margin-bottom: 14px;
+}
+
+.row.cols-1  { grid-template-columns: 1fr; }
+.row.cols-2  { grid-template-columns: 1fr 1fr; }
+.row.cols-3  { grid-template-columns: 1fr 1fr 1fr; }
+.row.cols-4  { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.row.cols-32 { grid-template-columns: 2fr 1fr; }
+.row.cols-23 { grid-template-columns: 1fr 2fr; }
+.row.cols-213{ grid-template-columns: 2fr 1fr 1.5fr; }
+
+/* ==============================
+   FORM FIELDS
+   ============================== */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-radius: 3px;
+  padding: 8px 11px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  width: 100%;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--navy-mid);
+  box-shadow: 0 0 0 3px rgba(26, 46, 90, 0.10);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ==============================
+   GENDER RADIO GROUP
+   ============================== */
+.gender-group {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--white);
+  min-height: 38px;
+}
+
+.gender-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.gender-group input[type="radio"] {
+  accent-color: var(--navy);
+  width: 14px;
+  height: 14px;
+}
+
+/* ==============================
+   PARENT / GUARDIAN GRID
+   ============================== */
+.parent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.parent-col {
+  padding: 0;
+}
+
+.parent-col:first-child {
+  border-right: 1px solid var(--border);
+}
+
+.parent-header {
+  background: var(--navy-mid);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  text-align: center;
+}
+
+.parent-fields {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* ==============================
+   DOCUMENTS CHECKLIST
+   ============================== */
+.checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.88rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px 11px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--white);
+  transition: border-color 0.15s;
+}
+
+.check-item:hover {
+  border-color: var(--navy);
+}
+
+.check-item input[type="checkbox"] {
+  accent-color: var(--navy);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* ==============================
+   YES / NO ROWS (Section 5)
+   ============================== */
+.yn-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.yn-label {
+  font-size: 0.88rem;
+  color: var(--text);
+  flex: 1;
+  min-width: 260px;
+}
+
+.yn-options {
+  display: flex;
+  gap: 12px;
+}
+
+.yn-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.yn-options input[type="radio"] {
+  accent-color: var(--navy);
+}
+
+.specify-field {
+  flex: 1;
+  min-width: 160px;
+}
+
+.specify-field input {
+  border: none;
+  border-bottom: 1.5px solid var(--border);
+  border-radius: 0;
+  padding: 4px 2px;
+  font-size: 0.88rem;
+  color: var(--text);
+  outline: none;
+  width: 100%;
+  background: transparent;
+}
+
+.specify-field input:focus {
+  border-bottom-color: var(--navy);
+}
+
+/* ==============================
+   DECLARATION BOX
+   ============================== */
+.declaration-box {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--white);
+  padding: 16px 18px;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+/* ==============================
+   SUBMIT BUTTONS
+   ============================== */
+.submit-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+  padding: 0 32px 32px;
+  background: var(--cream);
+}
+
+.btn {
+  padding: 12px 36px;
+  border-radius: 3px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--navy-mid);
+  box-shadow: 0 4px 16px rgba(13, 27, 62, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+
+.btn-secondary:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ==============================
+   OFFICE USE ONLY SECTION
+   ============================== */
+.office-section {
+  background: var(--navy);
+  padding: 18px 32px 22px;
+}
+
+.office-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.office-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px 24px;
+  margin-bottom: 14px;
+}
+
+.office-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.office-field label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.office-field input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 3px;
+  padding: 7px 10px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.88rem;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.18s;
+  width: 100%;
+}
+
+.office-field input:focus {
+  border-color: var(--gold);
+}
+
+.office-yn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.office-yn label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+}
+
+.office-yn input[type="checkbox"] {
+  accent-color: var(--gold);
+}
+
+/* ==============================
+   RESPONSIVE — Mobile
+   ============================== */
+@media (max-width: 640px) {
+  .form-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px 20px;
+  }
+
+  .header-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-body {
+    padding: 0 16px 28px;
+  }
+
+  .row.cols-2,
+  .row.cols-3,
+  .row.cols-4,
+  .row.cols-32,
+  .row.cols-23,
+  .row.cols-213 {
+    grid-template-columns: 1fr;
+  }
+
+  .parent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .parent-col:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .checklist-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .office-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .submit-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ==============================
+   ACCESSIBILITY HELPERS
+   ============================== */
+
+/* Screen-reader only — visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Gender fieldset — remove default fieldset styling */
+.gender-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gender-fieldset legend {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+/* Office group label (not tied to an input) */
+.office-group-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
