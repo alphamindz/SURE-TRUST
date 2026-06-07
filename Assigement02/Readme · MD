@@ -1,0 +1,134 @@
+# 🎓 Academy Entry Form
+
+A professional, accessible **HTML + CSS** admission form for schools and academies.
+
+---
+
+## 📁 Project Structure
+
+```
+Assignment02/
+├── index.html       ← Main HTML file (form structure)
+├── style.css        ← All styling (separate CSS file)
+└── README.md        ← Project documentation (this file)
+```
+
+---
+
+## 🚀 How to Run
+
+1. Download both `index.html` and `style.css` files
+2. Keep them in the **same folder**
+3. Open `index.html` in any browser
+
+> ⚠️ Both files must be in the same folder, otherwise styling will not load.
+
+---
+
+## 📋 Form Sections
+
+| # | Section | Description |
+|---|---------|-------------|
+| 1 | Class Applied For | Academic year, class, stream, admission date |
+| 2 | Student Information | Name, DOB, gender, address, contact details |
+| 3 | Parent / Guardian Info | Father & mother details, income, signature |
+| 4 | Previous School Details | School name, board, last class, location |
+| 5 | Additional Information | Medical conditions, disciplinary record, hobbies |
+| 6 | Documents Checklist | Tick required documents |
+| 7 | Declaration | Date and parent/guardian signature |
+| — | For Office Use Only | Application no., verification, approval |
+
+---
+
+## ✅ Accessibility Features
+
+All form elements follow **WCAG** accessibility standards:
+
+- Every `<input>`, `<select>`, and `<textarea>` has:
+  - A matching `<label for="id">` — screen reader support
+  - A unique `id` attribute
+  - A `title` attribute — tooltip on hover
+- Radio groups use `<fieldset>` + `<legend>` (Gender)
+- Yes/No radio groups use `role="radiogroup"` + `aria-labelledby`
+- Hidden labels use `.sr-only` class (visually hidden, screen reader visible)
+- Sections use `aria-labelledby` for landmark navigation
+- Office checkboxes use `role="group"` + `aria-label`
+
+---
+
+## 🎨 Design Details
+
+| Property | Value |
+|----------|-------|
+| Primary Color | Navy `#0d1b3e` |
+| Accent Color | Gold `#c9a84c` |
+| Body Font | Source Sans 3 (Google Fonts) |
+| Heading Font | Playfair Display (Google Fonts) |
+| Max Width | 860px (centered) |
+| Responsive | ✅ Mobile-friendly (≤ 640px) |
+
+---
+
+## 🖨️ Print Support
+
+Click the **Print Form** button — the browser print dialog will open.  
+The form is designed to print cleanly on A4 paper.
+
+---
+
+## 🛠️ Technologies Used
+
+- **HTML5** — Semantic tags (`<section>`, `<header>`, `<main>`, `<fieldset>`)
+- **CSS3** — Grid layout, CSS variables, transitions, media queries
+- **Google Fonts** — Playfair Display, Source Sans 3
+- No JavaScript frameworks — pure HTML & CSS
+
+---
+
+## 🔧 Customization
+
+### Change Colors
+Open `style.css` and edit the `:root` variables at the top:
+
+```css
+:root {
+  --navy:       #0d1b3e;   /* Primary dark color */
+  --gold:       #c9a84c;   /* Accent / highlight color */
+  --cream:      #fafaf7;   /* Form body background */
+  --border:     #d0d8e8;   /* Input border color */
+}
+```
+
+### Change Fonts
+Replace the Google Fonts `@import` line at the top of `style.css`:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=YourFont&display=swap');
+```
+
+### Add/Remove Form Fields
+Each field follows this pattern in `index.html`:
+
+```html
+<div class="field">
+  <label for="fieldId">Field Label</label>
+  <input id="fieldId" name="fieldId" type="text"
+         placeholder="Hint text" title="Field Label">
+</div>
+```
+
+---
+
+## 📱 Responsive Breakpoints
+
+| Screen | Layout |
+|--------|--------|
+| > 640px | Multi-column grid (2–3 columns) |
+| ≤ 640px | Single column, stacked layout |
+
+---
+
+## 👨‍💻 Author
+
+**Assignment 02** — Sure Trust  
+Built with HTML5 + CSS3 | Accessible | Professional Design
